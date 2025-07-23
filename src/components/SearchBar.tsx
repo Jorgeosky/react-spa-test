@@ -12,7 +12,10 @@ const SearchBar: React.FC<any> = ({
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div
+      className="SearchBar"
+      style={{ display: 'flex', alignItems: 'center' }}
+    >
       <TextField
         id="filled-search"
         label="Buscar"
@@ -20,13 +23,14 @@ const SearchBar: React.FC<any> = ({
         type="search"
         variant="outlined"
         size="small"
+        style={{ marginTop: '10px' }}
         value={searchTerm}
         onChange={handleChange}
       />
       <Button
         size="large"
         variant="contained"
-        style={{ marginLeft: '10px' }}
+        style={{ marginLeft: '10px', marginTop: '10px' }}
         onClick={() => handleOpenForm(null)}
       >
         Agregar Usuario

@@ -51,6 +51,7 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
 
   return (
     <Modal
+      className="modal"
       open={showForm}
       onClose={handleClose}
       aria-labelledby="modal-title"
@@ -62,7 +63,10 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: 400,
+          width: {
+            xs: '70%',
+            sm: 400,
+          },
           bgcolor: 'background.paper',
           border: '2px solid #000',
           boxShadow: 24,
@@ -122,7 +126,14 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
           />
         </div>
         <br />
-        <div style={{ marginTop: '20px', textAlign: 'right' }}>
+        <div
+          className="ModalButtons"
+          style={{
+            display: 'flex',
+            marginTop: '20px',
+            justifyContent: 'flex-end',
+          }}
+        >
           <Button
             variant="outlined"
             type="submit"
@@ -130,7 +141,7 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
               handleSubmit();
               handleClose();
             }}
-            style={{ marginRight: '20px' }}
+            style={{ margin: '10px' }}
             disabled={
               firstName && lastName && email && avatar ? undefined : true
             }
@@ -141,6 +152,7 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
             variant="outlined"
             color="error"
             type="button"
+            style={{ margin: '10px' }}
             onClick={handleClose}
           >
             Cancelar
