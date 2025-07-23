@@ -10,7 +10,7 @@ const UserList: React.FC<any> = ({ handleOpenForm }) => {
   const userList = filteredUsers;
 
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rowsPerPage, setRowsPerPage] = React.useState(8);
 
   const paginatedUsers = userList.slice(
     page * rowsPerPage,
@@ -34,7 +34,6 @@ const UserList: React.FC<any> = ({ handleOpenForm }) => {
   return (
     <>
       <div
-        className="user-list"
         style={{
           display: 'grid',
           justifyItems: 'center',

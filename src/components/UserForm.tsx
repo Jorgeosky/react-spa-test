@@ -2,7 +2,14 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { UserContext } from '../context/UserContext';
 
-import { Button, Modal, Box, Typography, TextField } from '@mui/material';
+import {
+  Button,
+  Modal,
+  Box,
+  Typography,
+  TextField,
+  Divider,
+} from '@mui/material';
 
 const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
   const { addUser, editUser } = useContext(UserContext);
@@ -64,17 +71,18 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
       >
         <Typography
           id="modal-modal-description"
+          variant="h4"
           sx={{ mt: 2 }}
           style={{
             marginBottom: '20px',
             textAlign: 'center',
-            fontSize: '24px',
             fontWeight: 'bold',
           }}
         >
           {userToEdit ? 'Editar Usuario' : 'Agregar Usuario'}
         </Typography>
-        <form onSubmit={handleSubmit} className="user-form">
+        <Divider style={{ marginBottom: '20px' }} />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <TextField
             id="first-name"
             label="Nombre"
@@ -112,7 +120,9 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
             required
             style={{ marginBottom: '10px' }}
           />
-          <br />
+        </div>
+        <br />
+        <div style={{ marginTop: '20px', textAlign: 'right' }}>
           <Button
             variant="outlined"
             type="submit"
@@ -120,7 +130,7 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
               handleSubmit();
               handleClose();
             }}
-            style={{ marginRight: '10px' }}
+            style={{ marginRight: '20px' }}
             disabled={
               firstName && lastName && email && avatar ? undefined : true
             }
@@ -135,7 +145,7 @@ const UserForm: React.FC<any> = ({ userToEdit, showForm, setShowForm }) => {
           >
             Cancelar
           </Button>
-        </form>
+        </div>
       </Box>
     </Modal>
   );

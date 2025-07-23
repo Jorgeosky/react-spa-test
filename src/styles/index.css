@@ -26,16 +26,3 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
-h1 {
-  color: #333;
-  font-size: 50px;
-}
-h2 {
-  color: #333;
-  font-size: 30px;
-}
-h3 {
-  color: #333;
-  font-size: 20px;
-}

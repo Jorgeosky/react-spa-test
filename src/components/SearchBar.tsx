@@ -12,7 +12,7 @@ const SearchBar: React.FC<any> = ({
   };
 
   return (
-    <div className="mb-4">
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <TextField
         id="filled-search"
         label="Buscar"

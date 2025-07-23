@@ -6,7 +6,7 @@ import UserForm from './components/UserForm';
 import { useUsers } from './hooks/useUsers';
 import { UserContext } from './context/UserContext';
 
-import { Divider, Box } from '@mui/material';
+import { Divider, Box, Typography } from '@mui/material';
 
 const App: React.FC = () => {
   useUsers();
@@ -36,9 +36,13 @@ const App: React.FC = () => {
         }}
       >
         <div className="NavBar">
-          <h1>
-            <b>UserHub</b>
-          </h1>
+          <Typography
+            variant="h2"
+            component="span"
+            style={{ margin: '20px', fontWeight: 'bold' }}
+          >
+            UserHub
+          </Typography>
           <SearchBar
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Divider, Modal, Box, Button } from '@mui/material';
+import { Divider, Modal, Box, Button, Typography } from '@mui/material';
 
 const Confirm: React.FC<{
   showConfirm: boolean;
@@ -41,10 +41,14 @@ const Confirm: React.FC<{
       >
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded shadow-md">
-            <h2 className="text-lg font-semibold">Eliminar Usuario</h2>
-            <p className="mt-4">Esta Seguro de eliminar este usuario?</p>
-            <Divider className="my-4" style={{ marginBottom: '30px' }} />
-            <div className="mt-6 flex justify-end">
+            <Typography>
+              <h2>Eliminar Usuario</h2>
+            </Typography>
+            <Divider />
+            <Typography>
+              <p className="mt-4">Esta Seguro de eliminar este usuario?</p>
+            </Typography>
+            <div style={{ marginTop: '50px' }}>
               <Button
                 variant="outlined"
                 type="button"
